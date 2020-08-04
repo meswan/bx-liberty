@@ -15,6 +15,6 @@
 
   <applicationMonitor pollingRate="1000ms"/>
 
-  <webApplication name="javalibertyapp-1.0-SNAPSHOT" location="${app.location}" contextRoot="/"/>
+  <webApplication location="${project.name}.war" contextRoot="/"/>
 
 </server>
