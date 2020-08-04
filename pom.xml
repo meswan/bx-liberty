@@ -27,8 +27,8 @@
         <liberty.var.default.https.port>9443</liberty.var.default.https.port>
         <liberty.var.project.name>${project.artifactId}</liberty.var.project.name>
 
-        <package.file>${project.build.directory}/${project.artifactId}-${project.version}.zip</package.file>
-        <packaging.type>usr</packaging.type>
+<!--        <package.file>${project.build.directory}/${project.artifactId}-${project.version}.zip</package.file>-->
+<!--        <packaging.type>usr</packaging.type>-->
         <!-- Cloud Foundry/IBM Cloud properties -->
         <cf.context>mybluemix.net</cf.context>
         <cf.target>https://api.ng.bluemix.net</cf.target>
@@ -83,9 +83,15 @@
             <scope>test</scope>
         </dependency>
         <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter</artifactId>
+            <version>5.6.2</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
             <groupId>org.apache.cxf</groupId>
             <artifactId>cxf-rt-rs-client</artifactId>
-            <version>3.1.11</version>
+            <version>3.3.4</version>
             <scope>test</scope>
         </dependency>
         <dependency>
@@ -107,19 +113,19 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
-                <version>2.18.1</version>
-                <executions>
-                    <execution>
-                        <phase>test</phase>
-                        <id>default-test</id>
-                        <configuration>
-                            <excludes>
-                                <exclude>**/it/**</exclude>
-                            </excludes>
-                            <reportsDirectory>${project.build.directory}/test-reports/unit</reportsDirectory>
-                        </configuration>
-                    </execution>
-                </executions>
+                <version>2.22.2</version>
+<!--                <executions>-->
+<!--                    <execution>-->
+<!--                        <phase>test</phase>-->
+<!--                        <id>default-test</id>-->
+<!--                        <configuration>-->
+<!--                            <excludes>-->
+<!--                                <exclude>**/it/**</exclude>-->
+<!--                            </excludes>-->
+<!--                            <reportsDirectory>${project.build.directory}/test-reports/unit</reportsDirectory>-->
+<!--                        </configuration>-->
+<!--                    </execution>-->
+<!--                </executions>-->
             </plugin>
             <!-- Enable liberty-maven plugin -->
             <plugin>
@@ -150,37 +156,17 @@
 <!--                </configuration>-->
             </plugin>
             <!-- Plugin to run functional tests -->
+            <!-- Plugin to run functional tests -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-failsafe-plugin</artifactId>
-                <version>2.18.1</version>
-                <executions>
-                    <execution>
-                        <phase>integration-test</phase>
-                        <id>integration-test</id>
-                        <goals>
-                            <goal>integration-test</goal>
-                        </goals>
-                        <configuration>
-                            <includes>
-                                <include>**/it/**</include>
-                            </includes>
-                            <systemPropertyVariables>
-                                <liberty.test.port>${testServerHttpPort}</liberty.test.port>
-                                <war.context>${warContext}</war.context>
-                            </systemPropertyVariables>
-                        </configuration>
-                    </execution>
-                    <execution>
-                        <id>verify-results</id>
-                        <goals>
-                            <goal>verify</goal>
-                        </goals>
-                    </execution>
-                </executions>
+                <version>2.22.2</version>
                 <configuration>
-                    <summaryFile>${project.build.directory}/test-reports/it/failsafe-summary.xml</summaryFile>
-                    <reportsDirectory>${project.build.directory}/test-reports/it</reportsDirectory>
+                    <systemPropertyVariables>
+                        <http.port>${liberty.var.default.http.port}</http.port>
+                        <https.port>${liberty.var.default.https.port}</https.port>
+<!--                        <app.context.root>${liberty.var.app.context.root}</app.context.root>-->
+                    </systemPropertyVariables>
                 </configuration>
             </plugin>
         </plugins>

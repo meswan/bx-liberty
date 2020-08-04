@@ -12,7 +12,7 @@ import org.junit.Test;
 
 public class StaticContentIT {
 
-    private String port = System.getProperty("liberty.test.port");
+    private String port = System.getProperty("http.port");
     private String url = "http://localhost:" + port;
 
     @Test
