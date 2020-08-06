@@ -6,6 +6,7 @@
       <feature>jaxrs-2.1</feature>
   </featureManager>
 
+ <logging consoleLogLevel="INFO"/>
  <variable name="default.http.port" defaultValue="9080"/>
  <variable name="default.https.port" defaultValue="9443"/>
  <variable name="project.name" defaultValue="javalibertyapp"/>
