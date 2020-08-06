@@ -1,8 +1,9 @@
 <server description="Sample Liberty server">
 
   <featureManager>
-      <feature>microProfile-3.0</feature>
+      <feature>mpHealth-2.2</feature>
       <feature>jndi-1.0</feature>
+      <feature>jaxrs-2.1</feature>
   </featureManager>
 
  <variable name="default.http.port" defaultValue="9080"/>
