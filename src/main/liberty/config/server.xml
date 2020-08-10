@@ -1,9 +1,10 @@
 <server description="Sample Liberty server">
 
   <featureManager>
-      <feature>mpHealth-2.2</feature>
-      <feature>jndi-1.0</feature>
-      <feature>jaxrs-2.1</feature>
+      <feature>microProfile-3.3</feature>
+<!--      <feature>mpHealth-2.2</feature>-->
+<!--      <feature>jndi-1.0</feature>-->
+<!--      <feature>jaxrs-2.1</feature>-->
   </featureManager>
 
  <logging consoleLogLevel="INFO"/>
