@@ -7,27 +7,17 @@
     <version>1.0-SNAPSHOT</version>
     <packaging>war</packaging>
 
-<!--    &lt;!&ndash; contains default pluginManagement configuration for liberty-maven-plugin &ndash;&gt;-->
-<!--    <parent>-->
-<!--        <groupId>net.wasdev.wlp.maven.parent</groupId>-->
-<!--        <artifactId>liberty-maven-app-parent</artifactId>-->
-<!--        <version>2.1.2</version>-->
-<!--    </parent>-->
-
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
 
-<!--        <liberty.plugin.version>2.6.1</liberty.plugin.version>-->
-<!--        <app.name>javalibertyapp</app.name>-->
         <!-- Liberty configuration -->
         <liberty.var.default.http.port>9080</liberty.var.default.http.port>
         <liberty.var.default.https.port>9443</liberty.var.default.https.port>
         <liberty.var.project.name>${project.artifactId}</liberty.var.project.name>
-<!--        <package.file>${project.build.directory}/${project.artifactId}-${project.version}.zip</package.file>-->
-<!--        <packaging.type>usr</packaging.type>-->
+
         <!-- Cloud Foundry/IBM Cloud properties -->
         <cf.context>mybluemix.net</cf.context>
         <cf.target>https://api.ng.bluemix.net</cf.target>
