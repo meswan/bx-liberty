@@ -1,13 +1,13 @@
 package it;
 
-import static org.junit.Assert.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import javax.ws.rs.client.Client;
 import javax.ws.rs.client.ClientBuilder;
 import javax.ws.rs.client.Invocation;
 import javax.ws.rs.core.Response;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 public class HealthEndpointIT {
 
@@ -25,7 +25,7 @@ public class HealthEndpointIT {
           Thread.sleep(5000);
           responseCode = makeRequest();
         }
-        assertTrue("Incorrect response code: " + responseCode, responseCode == 200);
+        assertTrue(responseCode == 200, "Incorrect response code: " + responseCode);
     }
 
     private int makeRequest() {
